@@ -1204,12 +1204,12 @@ img {
   aspect-ratio: 21 / 9;
 }
 
-/* Two-up figure grid */
+/* Two-up figure grid — bleeds slightly past the text column */
 .pj-fig-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  margin: 1.4rem 0;
+  margin: 1.4rem -4.5rem 1.4rem -3rem;
 }
 
 .scope-box {
@@ -1266,6 +1266,7 @@ img {
 
   .pj-fig-grid {
     grid-template-columns: 1fr;
+    margin: 1.4rem 0;
   }
 }
 
