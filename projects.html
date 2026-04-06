@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Projects | Samantha Hordyk</title>    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left">
+          <button class="earth-widget" id="co2Toggle" type="button" aria-expanded="false">
+            <span class="earth-icon" aria-hidden="true"></span>
+            <span class="sr-only">Show today's CO2 ppm</span>
+          </button>
+          <div class="co2-popover" id="co2Popover" hidden>
+            <p><strong>Atmospheric CO<sub>2</sub>:</strong> <span id="co2Value">Loading...</span></p>
+            <p class="co2-source">Source: NOAA GML <span id="co2Date"></span></p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="projects.html">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container page-main projects-page">
+      <section class="page-intro">
+        <h1>Projects & Experiments</h1>
+        <p>More coming soon, including supplementary material and live repos!</p>
+      </section>
+
+      <section class="projects-stage">
+        <div class="project-gallery">
+          <a class="project-thumb" href="bee-connectivity.html">
+            <div class="project-thumb-media"><img src="assets/Bees/detail_crop.png" alt="Urban bee habitat connectivity thumbnail" /></div>
+            <span class="project-thumb-title">Urban Bee Habitat Connectivity</span>
+          </a>
+
+          <a class="project-thumb" href="events-dashboard.html">
+            <div class="project-thumb-media"><img class="zoom-in" src="assets/FractureFlow/0.01crop.gif" alt="Fracture-Flow Transition thumbnail" /></div>
+            <span class="project-thumb-title">Fracture-Flow Transition</span>
+          </a>
+
+          <a class="project-thumb" href="archive-platform.html">
+            <div class="project-thumb-media"><img src="assets/Wildfire/wildfirepic.png" alt="Landslide prediction thumbnail" /></div>
+            <span class="project-thumb-title">Machine Learning & Compound Hazards</span>
+          </a>
+
+          <a class="project-thumb" href="permafrost-slump-model.html">
+            <div class="project-thumb-media"><img src="assets/Permafrost/stress_distribution_crop.png" alt="Permafrost slump stress distribution thumbnail" /></div>
+            <span class="project-thumb-title">Permafrost Slump Model</span>
+          </a>
+
+          
+
+          
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <!-- Modal for expanded project details (document root) -->
+    <div class="project-modal" id="projectModal" hidden aria-hidden="true">
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close details">✕</button>
+        <header class="modal-header">
+          <h3 id="modalTitle">Project Title</h3>
+        </header>
+        <section class="modal-body">
+          <div class="modal-gallery" id="modalGallery"></div>
+          <div class="modal-copy" id="modalCopy"></div>
+          <div class="modal-links" id="modalLinks"></div>
+        </section>
+        <div class="modal-nav">
+          <button id="modalPrev" class="button">Prev</button>
+          <button id="modalNext" class="button">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

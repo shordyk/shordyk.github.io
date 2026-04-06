@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Project Title | Samantha Hordyk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left"></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pj-page">
+      <div class="pj-inner">
+        <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
+
+        <!-- ── Page header ───────────────────────────── -->
+        <header class="pj-header">
+          <h1>Project Title Goes Here</h1>
+          <p class="pj-lede">
+            A two-to-three sentence overview of what this project is, why it matters,
+            and what methods or tools were used. Keep it approachable — think of it as
+            the abstract someone reads before deciding whether to dig in.
+          </p>
+        </header>
+
+        <!-- ── Two-column layout ─────────────────────── -->
+        <div class="pj-layout">
+
+          <!-- Scope sidebar (must come first in HTML for float to work) -->
+          <aside class="pj-sidebar">
+            <div class="scope-box">
+              <p class="scope-label">SCOPE</p>
+              <dl class="scope-list">
+                <dt>Purpose</dt>
+                <dd>Academic research / course project / independent study</dd>
+                <dt>Length</dt>
+                <dd>4 months</dd>
+                <dt>Status</dt>
+                <dd>Complete</dd>
+                <dt>Tools</dt>
+                <dd>Python, MATLAB, ArcGIS</dd>
+              </dl>
+            </div>
+          </aside>
+
+          <!-- Main body -->
+          <div class="pj-body">
+
+            <section class="pj-section">
+              <h2>Background</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+                habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                egestas. Quisque gravida enim non arcu ultrices, id lacinia nunc
+                vulputate. Vestibulum ante ipsum primis in faucibus orci luctus et
+                ultrices posuere cubilia curae.
+              </p>
+              <p>
+                Nulla facilisi. Donec euismod libero sit amet urna tincidunt, at
+                faucibus orci posuere. Sed condimentum quam et metus aliquet, non
+                fermentum quam volutpat.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Methods</h2>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+                Cras mattis consectetur purus sit amet fermentum. Integer posuere erat
+                a ante venenatis dapibus posuere velit aliquet.
+              </p>
+
+              <!-- Placeholder figure -->
+              <figure class="pj-fig-placeholder">
+                <div class="pj-fig-box">Figure 1 — placeholder</div>
+                <figcaption>Caption describing what this figure shows and its significance to the methods.</figcaption>
+              </figure>
+
+              <p>
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Maecenas
+                sed diam eget risus varius blandit sit amet non magna.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Results</h2>
+              <p>
+                Donec ullamcorper nulla non metus auctor fringilla. Aenean eu leo
+                quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.
+                Vestibulum id ligula porta felis euismod semper.
+              </p>
+
+              <!-- Two placeholder figures side by side -->
+              <div class="pj-fig-grid">
+                <figure class="pj-fig-placeholder">
+                  <div class="pj-fig-box">Figure 2a — placeholder</div>
+                  <figcaption>Caption for first result figure.</figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder">
+                  <div class="pj-fig-box">Figure 2b — placeholder</div>
+                  <figcaption>Caption for second result figure.</figcaption>
+                </figure>
+              </div>
+
+              <p>
+                Sed posuere consectetur est at lobortis. Nullam quis risus eget urna
+                mollis ornare vel eu leo. Cras justo odio, dapibus ac facilisis in,
+                egestas eget quam.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Discussion</h2>
+              <p>
+                Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus
+                ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
+                justo sit amet risus. Cras mattis consectetur purus sit amet fermentum.
+              </p>
+
+              <!-- Wide single placeholder figure -->
+              <figure class="pj-fig-placeholder pj-fig-wide">
+                <div class="pj-fig-box">Figure 3 — placeholder (wide)</div>
+                <figcaption>Caption for a full-width figure, such as a map or diagram.</figcaption>
+              </figure>
+
+              <p>
+                Nullam id dolor id nibh ultricies vehicula ut id elit. Maecenas
+                faucibus mollis interdum. Sed posuere consectetur est at lobortis.
+              </p>
+            </section>
+
+          </div><!-- /pj-body -->
+
+        </div><!-- /pj-layout -->
+
+        <div class="project-actions">
+          <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
+        </div>
+      </div><!-- /pj-inner -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

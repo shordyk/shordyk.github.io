@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Work | Samantha Hordyk</title>    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left">
+          <button class="earth-widget" id="co2Toggle" type="button" aria-expanded="false">
+            <span class="earth-icon" aria-hidden="true"></span>
+            <span class="sr-only">Show today's CO2 ppm</span>
+          </button>
+          <div class="co2-popover" id="co2Popover" hidden>
+            <p><strong>Atmospheric CO<sub>2</sub>:</strong> <span id="co2Value">Loading...</span></p>
+            <p class="co2-source">Source: NOAA GML <span id="co2Date"></span></p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a class="active" href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container page-main cv-layout">
+      <section class="page-intro">
+        <h1 class="cv-page-heading">Professional &amp; Academic<br>Experience</h1>
+      </section>
+
+      <section class="cv-experience">
+
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Graduate Research Assistant</h3>
+            <span>09/2022 - 12/2022</span>
+          </div>
+          <p class="cv-org">Stanford Doerr School of Sustainability</p>
+          <p>
+            Led original research on multiphase instabilities in Earth systems, focusing on
+            fracture-flow transitions in granular media. Executed direct numerical simulations of
+            solid-fluid-gas interactions on high-performance computing clusters. Developed a custom
+            Python post-processing pipeline to analyze large datasets and visualize emergent
+            patterns. Presented at AGU 2023; manuscript in preparation.
+          </p>
+        </article>
+
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Climate, Energy, and Environment Intern</h3>
+            <span>09/2023 - 06/2024</span>
+          </div>
+          <p class="cv-org">Sandia National Laboratories</p>
+          <p>
+            Designed a modeling approach adapting a smoothed-particle hydrodynamics framework to
+            simulate interactions between floating algae mats and wave energy, assessing impacts of
+            Caribbean Sargassum on renewable energy potential.
+          </p>
+        </article>
+
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Public Service Fellow</h3>
+            <span>09/2023 - 06/2024</span>
+          </div>
+          <p class="cv-org">Stanford Haas Center for Public Service</p>
+          <p>
+            Partnered with environmental nonprofits, community leaders, and university stakeholders
+            to advance community-engaged research. Collaborated on a year-long project focused on
+            equitable, community-informed climate solutions.
+          </p>
+        </article>
+
+        <article class="cv-entry">
+          <div class="cv-entry-head">
+            <h3>Environmental Action Intern</h3>
+            <span>06/2021 - 12/2021</span>
+          </div>
+          <p class="cv-org">MIT Environmental Solutions Initiative</p>
+          <p>
+            Founding member of a rapid-response research team producing actionable briefs, white
+            papers, and technical-policy synthesis products for urgent environmental challenges.
+          </p>
+        </article>
+      </section>
+
+      <section class="cv-education">
+        <p class="cv-section-label">Education</p>
+        <div class="education-grid">
+          <article class="education-card">
+            <div class="education-head">
+              <h3>M.S. Geophysics</h3>
+              <span>2024</span>
+            </div>
+            <p class="cv-org">Stanford University</p>
+            <p><strong>Thesis:</strong> <em>Effect of Host Fluid Viscosity on the Flow-Fracture Transition in Computational Hele-Shaw Cells</em></p>
+            <p><strong>Selected coursework:</strong> Modeling Earth · Intro to Machine Learning · Fluid Mechanics · The Science and Practice of Valuing Nature for a Better World</p>
+          </article>
+
+          <article class="education-card">
+            <div class="education-head">
+              <h3>B.A. Physics</h3>
+              <span>2021</span>
+            </div>
+            <p class="cv-org">Reed College</p>
+            <p><strong>Thesis:</strong> <em>Multiphase Modeling of Glacial Lake Outburst Floods: A Review of Savage-Hutter Avalanche Theory and Debris Flow Models</em></p>
+            <p><strong>Selected coursework:</strong> Classical Mechanics · Electromagnetism · World Environmental History · Environmental Politics and Policy</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="cv-awards">
+        <p class="cv-section-label">Fellowships &amp; Awards</p>
+        <p class="cv-awards-list">
+          Haas Graduate Public Service Fellowship · Reed College Career Advancement Award<br>
+          DAAD RISE Fellowship · Reed College Environmental Studies Summer Fellowship
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

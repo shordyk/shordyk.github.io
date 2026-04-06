@@ -1,0 +1,23 @@
+<svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ocean" cx="34%" cy="28%" r="76%">
+      <stop offset="0%" stop-color="#9ce3f4" />
+      <stop offset="52%" stop-color="#6fc6de" />
+      <stop offset="100%" stop-color="#4ca8c6" />
+    </radialGradient>
+    <clipPath id="c">
+      <circle cx="48" cy="48" r="48" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <circle cx="48" cy="48" r="48" fill="url(#ocean)"/>
+    <path fill="#42a05d" d="M20 25L31 22L39 27L41 35L36 40L33 47L35 53L31 60L28 68L25 75L20 81L13 76L14 67L18 60L17 52L14 43L16 35Z"/>
+    <path fill="#389353" d="M25 75L31 80L32 87L29 93L22 98L16 95L17 87L20 80Z"/>
+    <path fill="#4cb06a" d="M33 10L40 8L45 12L43 19L37 22L31 18Z"/>
+    <path fill="#3f9c59" d="M52 26L62 22L73 23L81 26L88 33L86 40L79 43L70 41L64 44L56 43L52 38L48 33Z"/>
+    <path fill="#368f4f" d="M66 41L75 44L83 50L86 57L82 63L73 63L67 59L61 60L56 57L55 52L60 46Z"/>
+    <path fill="#32904f" d="M60 52L66 53L71 58L72 66L68 74L62 82L56 79L54 69L55 60Z"/>
+    <path fill="#3a9a57" d="M71 58L77 59L80 64L78 69L73 69L70 64Z"/>
+    <path fill="#379a56" d="M80 74L88 74L93 79L92 86L85 89L78 87L76 81Z"/>
+  </g>
+</svg>

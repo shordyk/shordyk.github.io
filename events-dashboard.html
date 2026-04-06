@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Fracture-Flow Transition | Samantha Hordyk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left"></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pj-page">
+      <div class="pj-inner">
+        <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
+
+        <header class="pj-header">
+          <h1>Modeling the Fracture-Flow Transition in Multiphase Granular Mixtures</h1>
+          <p class="pj-lede">
+            This project investigates the transition between fracture-dominated and flow-dominated
+            behavior in mixed-grain granular systems. Numerical simulations capture how grain-size
+            distribution and pore pressure evolve to control whether a mixture fails by localized
+            fracture or bulk flow — with implications for debris flows and landslide runout prediction.
+          </p>
+        </header>
+
+        <div class="pj-layout">
+
+          <aside class="pj-sidebar">
+            <div class="scope-box">
+              <p class="scope-label">SCOPE</p>
+              <dl class="scope-list">
+                <dt>Purpose</dt>
+                <dd>Academic research — independent study</dd>
+                <dt>Length</dt>
+                <dd>1 semester</dd>
+                <dt>Status</dt>
+                <dd>In progress</dd>
+                <dt>Tools</dt>
+                <dd>Python, numerical simulation, granular mechanics</dd>
+              </dl>
+            </div>
+          </aside>
+
+          <div class="pj-body">
+
+            <section class="pj-section">
+              <h2>Background</h2>
+              <p>
+                Granular materials — soils, sediments, fragmented rock — can fail in fundamentally
+                different ways depending on their composition and loading conditions. In some cases
+                failure is localized along discrete fracture planes; in others, the material
+                transitions to a flowing, fluid-like state. Understanding which regime dominates
+                has direct implications for predicting how debris flows initiate and how far they travel.
+              </p>
+              <p>
+                The transition between these two modes is poorly constrained, particularly in
+                multiphase mixtures where fine and coarse grains interact with pore fluid under
+                dynamic loading. This project develops a numerical framework to explore where and
+                why this transition occurs.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Methods</h2>
+              <p>
+                Numerical simulations were developed to model a granular mixture subjected to
+                progressive shear loading. Grain-size distributions and pore pressure conditions
+                were varied systematically to explore the parameter space controlling fracture
+                versus flow behavior. Model outputs track displacement fields, strain localization,
+                and pore pressure evolution over time.
+              </p>
+              <p>
+                Simulation results were visualized as time-series animations to make the
+                transition dynamics interpretable across parameter sets.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Results</h2>
+              <p>
+                The simulation captures the evolving fracture-flow transition as grain interactions
+                and pore pressure feedbacks shift the dominant failure mode. At low pore pressures
+                and coarser grain distributions, localized fracture planes emerge early and persist.
+                As pore pressure increases or fine-grain content rises, the mixture loses coherence
+                and transitions toward bulk flow behavior.
+              </p>
+
+              <figure class="pj-fig-placeholder">
+                <img src="assets/FractureFlow/0.01crop.gif" alt="Fracture-flow transition simulation animation" style="width:100%;border-radius:10px;display:block;" />
+                <figcaption>Animation of model output showing the evolving fracture-flow transition in a multiphase granular mixture.</figcaption>
+              </figure>
+            </section>
+
+            <section class="pj-section">
+              <h2>Discussion</h2>
+              <p>
+                These results suggest that pore pressure and grain-size distribution act as coupled
+                controls on failure mode — small shifts in either can tip a mixture from slow,
+                fracture-limited failure to rapid, runout-prone flow. This has practical implications
+                for early-warning thresholds in landslide monitoring and for runout models used in
+                hazard assessment.
+              </p>
+              <p>
+                Future work will expand the parameter space and test model outputs against
+                laboratory granular experiments to validate the simulated transition behavior.
+              </p>
+            </section>
+
+          </div><!-- /pj-body -->
+
+        </div><!-- /pj-layout -->
+
+        <div class="project-actions">
+          <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
+        </div>
+      </div><!-- /pj-inner -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

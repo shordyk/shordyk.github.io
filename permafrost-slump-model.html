@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Permafrost Slump Model | Samantha Hordyk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left"></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pj-page">
+      <div class="pj-inner">
+        <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
+
+        <!-- ── Page header ───────────────────────────── -->
+        <header class="pj-header">
+          <h1>Permafrost Slump Stress Distribution Model</h1>
+          <p class="pj-lede">
+            A finite-element model investigating internal stress distributions within retrogressive
+            thaw slumps. Model outputs were compared against field observations to evaluate how slump
+            geometry and headwall angle influence stress concentrations and failure patterns in
+            ice-rich permafrost terrain.
+          </p>
+        </header>
+
+        <!-- ── Two-column layout ─────────────────────── -->
+        <div class="pj-layout">
+
+          <!-- Scope sidebar (must come first in HTML for float to work) -->
+          <aside class="pj-sidebar">
+            <div class="scope-box">
+              <p class="scope-label">SCOPE</p>
+              <dl class="scope-list">
+                <dt>Purpose</dt>
+                <dd>Academic research — undergraduate thesis component</dd>
+                <dt>Length</dt>
+                <dd>1 semester</dd>
+                <dt>Status</dt>
+                <dd>Complete</dd>
+                <dt>Tools</dt>
+                <dd>MATLAB, finite-element modeling, field data</dd>
+              </dl>
+            </div>
+          </aside>
+
+          <!-- Main body -->
+          <div class="pj-body">
+
+            <section class="pj-section">
+              <h2>Background</h2>
+              <p>
+                Retrogressive thaw slumps are among the most dynamically active landforms in
+                ice-rich permafrost environments. As climate warming accelerates ground ice melt,
+                these features are growing in size and frequency across arctic and subarctic
+                landscapes. Understanding the mechanical conditions that drive headwall retreat and
+                slump expansion is critical for predicting future terrain change.
+              </p>
+              <p>
+                Field observations alone are insufficient to capture the subsurface stress
+                conditions governing slope failure. This project developed a finite-element approach
+                to model stress distributions within idealized slump geometries and test how
+                headwall angle and slump aspect ratio affect failure susceptibility.
+              </p>
+
+              <!-- Field photograph -->
+              <figure class="pj-fig-placeholder">
+                <img src="assets/Permafrost/IMG_627A8ADB545C-1.jpeg" alt="Field photograph of permafrost thaw slump" style="width:100%;border-radius:10px;display:block;" />
+                <figcaption>Field photograph of a retrogressive thaw slump used to calibrate model geometry.</figcaption>
+              </figure>
+            </section>
+
+            <section class="pj-section">
+              <h2>Methods</h2>
+              <p>
+                Slump geometries were parameterized using two aspect ratios (4:6 and 4:7) and a
+                fixed headwall angle of 50°, informed by field measurements. Finite-element meshes
+                were constructed for each geometry and subjected to gravitational loading. Stress
+                tensors were resolved to identify zones of elevated shear and tensile stress likely
+                to correspond to observed failure planes.
+              </p>
+              <p>
+                Model outputs were visualized as stress distribution maps and compared qualitatively
+                against field photographs and published slump morphology data.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Results</h2>
+              <p>
+                Both geometries produced stress concentrations near the headwall base and along the
+                floor-headwall transition zone, consistent with field observations of active undercutting
+                and basal failure. The 4:7 aspect ratio showed a broader high-stress zone extending
+                further into the slump floor, suggesting greater lateral instability at wider geometries.
+              </p>
+
+              <div class="pj-fig-grid">
+                <figure class="pj-fig-placeholder">
+                  <img src="assets/Permafrost/stress_distribution_fourtosix50deg.png" alt="Stress distribution — 4:6 geometry, 50° headwall" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Stress distribution for a 4:6 slump ratio at 50° headwall angle.</figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder">
+                  <img src="assets/Permafrost/stress_distribution_fourtoseven50deg.png" alt="Stress distribution — 4:7 geometry, 50° headwall" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Stress distribution for a 4:7 slump ratio at 50° headwall angle.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="pj-section">
+              <h2>Discussion</h2>
+              <p>
+                The modeled stress patterns align with commonly observed failure modes in retrogressive
+                thaw slumps: headwall undercutting driven by basal stress concentration, and lateral
+                widening associated with shear along the slump margins. These results support the
+                hypothesis that slump geometry is a significant predictor of expansion rate and failure style.
+              </p>
+
+              <figure class="pj-fig-placeholder pj-fig-wide">
+                <img src="assets/Permafrost/stress_distribution_crop.png" alt="Stress distribution model output overview" style="width:100%;height:100%;object-fit:contain;border-radius:10px;display:block;" />
+                <figcaption>Overview of modeled stress distribution across the slump body.</figcaption>
+              </figure>
+
+              <p>
+                Future work could incorporate thermomechanical coupling to account for ice content
+                variability and seasonal freeze-thaw cycling, which likely modulate stress states
+                over annual timescales.
+              </p>
+            </section>
+
+          </div><!-- /pj-body -->
+
+        </div><!-- /pj-layout -->
+
+        <div class="project-actions">
+          <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
+        </div>
+      </div><!-- /pj-inner -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

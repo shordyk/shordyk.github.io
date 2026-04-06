@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Urban Bee Habitat Connectivity | Samantha Hordyk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left"></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pj-page">
+      <div class="pj-inner">
+        <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
+
+        <header class="pj-header">
+          <h1>Urban Bee Habitat Connectivity</h1>
+          <p class="pj-lede">
+            A GIS-based analysis of pollinator habitat connectivity across an urban landscape,
+            identifying gaps in foraging corridors and prioritizing restoration sites to support
+            native bee populations. The project combines land cover classification, least-cost
+            path modeling, and patch connectivity metrics to produce actionable spatial recommendations.
+          </p>
+        </header>
+
+        <div class="pj-layout">
+
+          <aside class="pj-sidebar">
+            <div class="scope-box">
+              <p class="scope-label">SCOPE</p>
+              <dl class="scope-list">
+                <dt>Purpose</dt>
+                <dd>Academic research — course project</dd>
+                <dt>Length</dt>
+                <dd>1 semester</dd>
+                <dt>Status</dt>
+                <dd>Complete</dd>
+                <dt>Tools</dt>
+                <dd>ArcGIS Pro, Python, Circuitscape</dd>
+              </dl>
+            </div>
+          </aside>
+
+          <div class="pj-body">
+
+            <section class="pj-section">
+              <h2>Background</h2>
+              <p>
+                Urban expansion fragments natural habitats, isolating patches of vegetation that
+                native pollinators depend on for foraging and nesting. Bees are particularly
+                sensitive to this fragmentation — even small gaps in the landscape can interrupt
+                movement between habitat patches and reduce population viability over time.
+              </p>
+              <p>
+                This project focused on mapping and quantifying pollinator habitat connectivity
+                within an urban study area, with the goal of identifying where targeted restoration
+                could have the greatest impact on maintaining functional corridors for native bees.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Methods</h2>
+              <p>
+                Land cover was classified from aerial imagery to identify habitat patches — areas
+                of flowering vegetation, parks, gardens, and urban green space — alongside barriers
+                such as impervious surfaces and roads. A resistance surface was constructed
+                assigning movement costs to each land cover type based on published foraging
+                behavior data for native bee species.
+              </p>
+
+              <figure class="pj-fig-placeholder">
+                <img src="assets/Bees/patch_size_histogram_500_k100.png" alt="Patch size histogram" style="width:100%;border-radius:10px;display:block;" />
+                <figcaption>Distribution of habitat patch sizes across the study area, used to characterize landscape fragmentation.</figcaption>
+              </figure>
+
+              <p>
+                Least-cost path modeling and Circuitscape current-flow analysis were used to
+                identify likely movement corridors and pinch points where connectivity is most
+                constrained.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Results</h2>
+              <p>
+                Connectivity analysis revealed several key pinch points where narrow vegetated
+                corridors cross high-traffic roads and large impervious surfaces. Habitat patches
+                in the urban core showed high isolation, while suburban areas with more continuous
+                green space maintained stronger functional connectivity.
+              </p>
+
+              <div class="pj-fig-grid">
+                <figure class="pj-fig-placeholder">
+                  <img src="assets/Bees/connectivity_map_basemap_500_full.png" alt="Habitat connectivity map" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Connectivity map showing movement corridors and isolated patches across the study area.</figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder">
+                  <img src="assets/Bees/northgate_detail_500_full.png" alt="Northgate area detail" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Detail view of the Northgate area showing pinch points and high-priority restoration sites.</figcaption>
+                </figure>
+              </div>
+            </section>
+
+            <section class="pj-section">
+              <h2>Discussion</h2>
+              <p>
+                Targeted restoration at identified pinch points — particularly roadside plantings
+                and green roof installations at key crossing points — could substantially improve
+                connectivity across the study area without requiring large land-use changes.
+                Prioritizing native flowering species with long bloom windows would maximize
+                foraging value for the broadest range of bee species.
+              </p>
+
+              <figure class="pj-fig-placeholder pj-fig-wide">
+                <img src="assets/Bees/connectivity_map_basemap_500_full.png" alt="Full connectivity map overview" style="width:100%;border-radius:10px;display:block;object-fit:cover;max-height:340px;" />
+                <figcaption>Full study area connectivity overview, with habitat patches and movement corridors overlaid on basemap.</figcaption>
+              </figure>
+
+              <p>
+                This framework is transferable to other urban areas and could be extended to
+                incorporate additional pollinator taxa or climate-projected land cover changes
+                to make restoration planning more forward-looking.
+              </p>
+            </section>
+
+          </div><!-- /pj-body -->
+
+        </div><!-- /pj-layout -->
+
+        <div class="project-actions">
+          <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
+        </div>
+      </div><!-- /pj-inner -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

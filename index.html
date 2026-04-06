@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <title>Samantha Hordyk | Portfolio</title>    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left">
+          <button class="earth-widget" id="co2Toggle" type="button" aria-expanded="false">
+            <span class="earth-icon" aria-hidden="true"></span>
+            <span class="sr-only">Show today's CO2 ppm</span>
+          </button>
+          <div class="co2-popover" id="co2Popover" hidden>
+            <p><strong>Atmospheric CO<sub>2</sub>:</strong> <span id="co2Value">Loading...</span></p>
+            <p class="co2-source">Source: NOAA GML <span id="co2Date"></span></p>
+          </div>
+        </div>
+        <ul class="nav-links">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <div class="profile-row">
+            <div class="profile-wrap" aria-hidden="true">
+              <img
+                class="profile-photo"
+                src="assets/photo.jpeg"
+                alt="Profile of Samantha Hordyk"
+              />
+            </div>
+            <div class="status-pill status-pill-rainbow">Open to work!</div>
+          </div>
+          <p class="intro">Lovely to e-meet you, my name is</p>
+          <h1 class="name">Samantha Hordyk</h1>
+          <p class="hero-line">
+            I'm a <strong> Computational Environmental Scientist</strong>, specializing in process-based modeling, geospatial analysis, and community-engaged 
+            climate solutions. In all of my work, my aim is to help build a safer and more sustainable world.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="projects.html">View Projects</a>
+            <a class="button rainbow-outline" href="contact.html">Contact Me</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container about">
+        <h2>About Me</h2>
+        <p>
+          As an environmental scientist with a background in independent computational research and interdisciplinary collaboration, I am focused on understanding and addressing complex environmental challenges. I recently earned my Master's in Geophysics at Stanford, where I studied the fundamental mechanics of natural hazards — from multiphase flow instabilities in melting permafrost to basal dynamics of ice streams. 
+        </p>
+        <p>
+          Alongside my technical work, I have consistently pursued roles that bridge science and action, reaching beyond the scope of a traditional academic researcher while working in environmental policy, community engagement, and climate action. I am always looking for ways to turn research and scientific insight into work that creates a real impact for people and the planet.
+        </p>
+      </section>
+
+      <section class="section tech-stack">
+        <div class="container tech-stack-head">
+          <h2>Skills & Tools</h2>
+        </div>
+        <div class="tech-marquee" aria-label="Rotating technical skills">
+          <div class="tech-track" id="techTrack"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,39 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ocean" cx="34%" cy="28%" r="76%">
+      <stop offset="0%" stop-color="#83dbec" />
+      <stop offset="52%" stop-color="#3aa9c6" />
+      <stop offset="100%" stop-color="#1d7598" />
+    </radialGradient>
+    <clipPath id="planetClip">
+      <circle cx="150" cy="150" r="150" />
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#planetClip)">
+    <circle cx="150" cy="150" r="150" fill="url(#ocean)" />
+
+    <!-- North + South America -->
+    <path fill="#2ea565" d="M66 80L92 72L109 84L114 100L102 111L94 128L98 142L90 159L84 179L78 202L67 223L52 212L54 188L63 168L61 146L53 126L58 105Z"/>
+    <path fill="#259053" d="M78 205L92 218L94 236L88 252L73 264L60 257L62 238L70 220Z"/>
+
+    <!-- Greenland -->
+    <path fill="#37af6b" d="M98 40L114 36L126 46L122 62L108 69L95 60Z"/>
+
+    <!-- Europe + Asia -->
+    <path fill="#2f9f62" d="M162 82L186 72L211 74L231 82L246 96L242 112L225 118L204 113L191 121L173 118L162 106L152 95Z"/>
+    <path fill="#2a9459" d="M197 113L218 120L236 135L243 151L235 166L216 166L202 156L188 158L176 150L174 138L186 126Z"/>
+
+    <!-- Africa -->
+    <path fill="#289657" d="M182 136L197 139L208 152L210 169L202 188L188 206L174 199L169 177L172 157Z"/>
+
+    <!-- Middle East + India -->
+    <path fill="#2fa05f" d="M207 151L220 154L226 166L221 177L210 176L204 166Z"/>
+
+    <!-- Australia -->
+    <path fill="#2c995c" d="M229 208L248 208L261 220L258 236L242 244L225 240L219 226Z"/>
+
+    <!-- Antarctica hint -->
+    <path fill="#2a8f54" d="M102 266L140 274L176 272L212 266L205 281L169 289L129 289L100 282Z"/>
+  </g>
+</svg>

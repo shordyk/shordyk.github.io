@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Machine Learning &amp; Compound Hazards | Samantha Hordyk</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container">
+        <div class="header-left"></div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pj-page">
+      <div class="pj-inner">
+        <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
+
+        <!-- ── Page header ───────────────────────────── -->
+        <header class="pj-header">
+          <h1>Machine Learning &amp; Compound Hazards: Random Forest Prediction of Landslides in California</h1>
+          <p class="pj-lede">
+            A random forest classifier trained to predict landslide susceptibility across California,
+            incorporating compound hazard drivers including wildfire burn history, slope, lithology,
+            and precipitation. The model highlights how post-fire landscapes dramatically increase
+            shallow landslide risk, with implications for early-warning systems and land-use planning.
+          </p>
+        </header>
+
+        <!-- ── Two-column layout ─────────────────────── -->
+        <div class="pj-layout">
+
+          <!-- Scope sidebar (must come first in HTML for float to work) -->
+          <aside class="pj-sidebar">
+            <div class="scope-box">
+              <p class="scope-label">SCOPE</p>
+              <dl class="scope-list">
+                <dt>Purpose</dt>
+                <dd>Academic research — course project</dd>
+                <dt>Length</dt>
+                <dd>1 semester</dd>
+                <dt>Status</dt>
+                <dd>Complete</dd>
+                <dt>Tools</dt>
+                <dd>Python, scikit-learn, ArcGIS, BAER/MTBS data</dd>
+              </dl>
+            </div>
+          </aside>
+
+          <!-- Main body -->
+          <div class="pj-body">
+
+            <section class="pj-section">
+              <h2>Background</h2>
+              <p>
+                Landslides in California are rarely driven by a single factor. Steep terrain,
+                unstable lithology, and intense precipitation all contribute — but wildfire adds a
+                compounding layer of risk that traditional susceptibility models often underweight.
+                Post-fire soils lose their cohesion and water-repellent layers form, dramatically
+                increasing runoff and shallow landslide initiation potential during subsequent
+                rain events.
+              </p>
+              <p>
+                This project investigated whether a machine learning approach incorporating fire
+                history as a compound driver could meaningfully improve landslide susceptibility
+                predictions over models trained on static terrain variables alone.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Methods</h2>
+              <p>
+                A random forest classifier was trained on a multi-variable dataset combining
+                slope gradient, aspect, lithology, precipitation intensity, vegetation cover,
+                and wildfire burn severity (derived from BAER/MTBS data). Training labels were
+                drawn from historical landslide inventories georeferenced across the state.
+              </p>
+              <p>
+                Feature importance scores were extracted to assess the relative contribution of
+                each driver. Model performance was evaluated using out-of-bag error, precision-recall
+                curves, and spatial cross-validation to guard against geographic overfitting.
+              </p>
+            </section>
+
+            <section class="pj-section">
+              <h2>Results &amp; Poster</h2>
+              <p>
+                The model achieved strong predictive performance, with wildfire burn severity
+                ranking as one of the top three features by importance — confirming that post-fire
+                conditions are a critical and underrepresented predictor of landslide susceptibility.
+                High-risk zones were concentrated in the Coast Ranges and Southern California
+                mountains, particularly in areas that had burned within the preceding three years.
+              </p>
+
+              <figure class="pj-fig-placeholder">
+                <img src="assets/Wildfire/Wildfire-Poster.png" alt="Poster summarizing model methods and results" style="width:100%;border-radius:10px;display:block;" />
+                <figcaption>Research poster summarizing model methodology, feature importance, and prediction results.</figcaption>
+              </figure>
+            </section>
+
+            <section class="pj-section">
+              <h2>Discussion</h2>
+              <p>
+                These findings support integrating dynamic fire-regime data into operational
+                landslide early-warning systems. The compound nature of the hazard — fire followed
+                by rain — means that susceptibility maps need to be updated seasonally rather than
+                treated as static products. The random forest framework is well-suited to this
+                because it can be retrained as new burn perimeters become available.
+              </p>
+              <p>
+                Limitations include spatial gaps in the historical landslide inventory and the
+                absence of soil moisture data as a predictor. Future work could incorporate
+                real-time satellite soil moisture products to improve temporal resolution.
+              </p>
+            </section>
+
+          </div><!-- /pj-body -->
+
+        </div><!-- /pj-layout -->
+
+        <div class="project-actions">
+          <a href="assets/Wildfire/Wildfire-Poster.png" download class="button button-primary">Download poster</a>
+          <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
+        </div>
+      </div><!-- /pj-inner -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>&copy; <span id="year"></span> Samantha Hordyk</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
