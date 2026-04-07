@@ -1185,8 +1185,7 @@ img {
 
 .pj-section p {
   margin: 0 0 1rem;
-  color: var(--muted);
-  font-size: 1rem;
+  color: var(--text);
   line-height: 1.72;
 }
 
@@ -1207,10 +1206,11 @@ img {
   align-items: center;
   gap: 0.45em;
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0;
-  color: var(--muted);
+  color: var(--text);
+  line-height: 1.72;
   margin-top: 0.5rem;
 }
 
@@ -1223,7 +1223,7 @@ img {
 .pj-toggle summary::before {
   content: '▶';
   font-size: 0.65em;
-  color: var(--muted);
+  color: var(--text);
   transition: transform 0.18s ease;
   flex-shrink: 0;
 }
@@ -1234,7 +1234,7 @@ img {
 
 .pj-toggle p {
   margin: 0 0 1rem;
-  color: var(--muted);
+  color: var(--text);
   font-size: 1rem;
   line-height: 1.72;
 }

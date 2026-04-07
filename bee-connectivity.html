@@ -26,7 +26,7 @@
         <header class="pj-header">
           <h1>Urban Bee Habitat Connectivity</h1>
           <p class="pj-lede">
-           For this indepndent spatial analysis project, I use ArcGIS and Python to create a habitat connectivity network for urban bees foraging across Seattle. Note: red-green color blind friendly version coming shortly!
+           For this independent spatial analysis project, I use ArcGIS and Python to create a habitat connectivity network for urban bees foraging across Seattle. Note: red-green color blind friendly images coming shortly!
           </p>
         </header>
 
@@ -53,18 +53,18 @@
             <section class="pj-section">
               <h2>OVERVIEW & DATA SOURCES</h2>
              <P>
-              As I have been building my competency with ArcGIS and geospatial science, I wanted to specifically deepen my understanding of spatial analysis and the approach that came to mind immediately was a connectivity analysis. The goal of this project was to model possible routes bees could take through a city, creating a network model showing the paths from one habitat to another, and quantifying how urban barriers disrupt those connections. 
+              As I have been building my competency with ArcGIS, I wanted to specifically deepen my understanding of spatial analysis and the approach that came to mind was a connectivity analysis. The goal of this project was to model possible routes bees could take through a city, creating a network model showing the paths from one habitat to another, and quantifying how urban barriers disrupt those connections. 
              </P><P>
               First, a few details about the data and basic methods. I used building and public park parcel polygons from the city of Seattle, paired with a 1-meter resolution tree cover raster. The tree canopy layer was derived from LiDAR and aerial imagery, and was produced through a partnership with the city of Seattle and the University of Vermont Spatial Analysis Laboratory (see report on tree cover loss in Seattle).  I also created the study boundary using the northern and southern Seattle city boundaries, and excluded water bodies from USGS to define the coastline. While the validity of using tree cover as a proxy for bee habitats is certainly debatable, I needed an accessible dataset with a high enough resolution to scale with urban features, like individual streets and buildings. 
              </P>
              <div class="pj-fig-grid">
                 <figure class="pj-fig-placeholder">
                   <img src="assets/Bees/patch_size_histogram_500.png" alt="Patch size histogram, 500m² minimum" style="width:100%;border-radius:10px;display:block;" />
-                  <figcaption>Patch size distribution with 500m² minimum threshold (~27,000 patches retained).</figcaption>
+                  <figcaption>(Fig. 1a) Patch size distribution with 500m² minimum threshold (~27,000 patches retained).</figcaption>
                 </figure>
                 <figure class="pj-fig-placeholder">
                   <img src="assets/Bees/patch_size_histogram_100.png" alt="Patch size histogram, 100m² minimum" style="width:100%;border-radius:10px;display:block;" />
-                  <figcaption>Patch size distribution with 100m² minimum threshold (~105,500 patches retained).</figcaption>
+                  <figcaption>(Fig. 1b) Patch size distribution with 100m² minimum threshold (~105,500 patches retained).</figcaption>
                 </figure>
               </div>
             </section>
@@ -74,9 +74,9 @@
             </section>
 
             <details class=”pj-toggle”>
-              <summary>Toggle to read the details of my method.</summary>
+              <summary>Toggle more about details of my method.</summary>
               <p>
-                In ArcGIS, these datasets are then combined(after removing tree cover fragments smaller than 3.5m<sup>2</sup>) into a binary habitat raster where every cell is either classified as bee habitat (1) or non-habitat (Null). This binary raster was then processed with the Region Group tool to assign a unique ID to each contiguous clump of habitat cells, producing over 320,000 distinct habitat patches! A cost surface raster is built from the binary habitat raster, assigning a cost of 1 to each habitat cell, a cost of 3 to other urban features such as streets and open land, and a cost of 100 to building footprints to create flight barriers. I then ran Cost Distance and Cost Allocation, with a maximum accumulated cost-distance of 2,400 cost distance. (800m set the maximum foraging distance, times 3 for the highest possible cost. This is a rather generous foraging distance, as it is possible for social bees like bumble bees to forage from 500m up to 1500m, but solitary, ground nesting bees are much more common to urban areas and only forage from around 100 to 300m. See Greenleaf et al. 2007 for more bee info!) For any given cell, the cost distance value is the accumulated cost to reach the nearest habitat patch, and the cost allocation value is the ID of that same nearest patch. These four rasters – habitat regions, cost surface, cost allocation, and cost distance – are then exported as GeoTIFFs and brought into Python for further analysis.
+                In ArcGIS, these datasets are then combined (after removing tree cover fragments smaller than 3.5m<sup>2</sup>) into a binary habitat raster where every cell is either classified as bee habitat (1) or non-habitat (Null). This binary raster was then processed with the Region Group tool to assign a unique ID to each contiguous clump of habitat cells, producing over 320,000 distinct habitat patches! A cost surface raster is built from the binary habitat raster, assigning a cost of 1 to each habitat cell, a cost of 3 to other urban features such as streets and open land, and a cost of 100 to building footprints to create flight barriers. I then ran Cost Distance and Cost Allocation, with a maximum accumulated cost-distance of 2,400 cost distance. (800m set the maximum foraging distance, times 3 for the highest possible cost. This is a rather generous foraging distance, as it is possible for social bees like bumble bees to forage from 500m up to 1500m, but solitary, ground nesting bees are much more common to urban areas and only forage from around 100 to 300m. See Greenleaf et al. 2007 for more bee info!) For any given cell, the cost distance value is the accumulated cost to reach the nearest habitat patch, and the cost allocation value is the ID of that same nearest patch. These four rasters – habitat regions, cost surface, cost allocation, and cost distance – are then exported as GeoTIFFs and brought into Python for further analysis.
               </p>
               <p>
                 My primary analysis tool was NetworkX, a Python package which implements crucial graph algorithms, like Brandes’ algorithm for the betweenness centrality metric and breadth-first search for connected components, in just a few lines. The first step was to filter out patches below a minimum threshold (100 or 500m<sup>2</sup>) to reduce computational load. Then, each surviving patch is reduced to a single centroid point by averaging the row and column positions of all its cells and converting to UTM coordinates with the raster’s affine transform. So each patch is now a single point in a GeoDataFrame with attributes for the patch ID and area. The cost allocation raster is then scanned to find where different patch regions border reach each other, and along the borders the cost distance values from both sides are summed to estimate the total travel cost through the boundary point. Then the minimum cost across all boundary contact points for each pair of habitat patches is kept as the connection weight. Now we can build a NetworkX graph where each node is a centroid and edges are weighted by the minimum crossing cost. Betweenness centrality (a measure of how often a patch lies along the cheapest path between patch pairs, or how “central” it is) and connected components (subnetworks of mutually reachable patches, that are disconnected from other groups) are then computed and merged back onto the GeoDataFrame for visualization.
@@ -88,52 +88,52 @@
             <section class="pj-section">
               <h2>RESULTS & DISCUSSION</h2>
               <P>
-                For both minimum areas, the patch size distributions follow a steep drop-off with many small patches, and few large ones. At the 500m<sup>2</sup> threshold, about 27,000 habitats are kept, and dropping the minimum size to 100m<sup>2</sup> keeps over 105,500, capturing all the smaller parks and street tree clusters. The median habitat patch at 100m<sup>2</sup> is only 251m<sup>2</sup>, showing that most of Seattle’s greenery exists as small, scattered pockets. As a side note, it is crucial to have larger areas of green spaces in cities rather than distributed smaller areas – both for the wildlife that depends on it, and for minimizing the urban heat island effect.
+                For both minimum areas, the patch size distributions shown in figures 1a and 1b follow a steep drop-off with many small patches, and few large ones. At the 500m<sup>2</sup> threshold, about 27,000 habitats are kept, and dropping the minimum size to 100m<sup>2</sup> keeps over 105,500, capturing all the smaller parks and street tree clusters. The median habitat patch at 100m<sup>2</sup> is only 251m<sup>2</sup>, showing that most of Seattle’s greenery exists as small, scattered pockets. As a side note, it is crucial to have larger areas of green spaces in cities rather than distributed smaller areas – both for the wildlife that depends on it, and for minimizing the urban heat island effect.
               </P>
-              <p>Now, for the real results! The red corridors in these city-wide maps, representing strings of highly central habitat patches, tend to follow clear urban barriers – I-5,I-90, the ship canal, etc – highlighting patches that serve as critical bridges across these gaps. The difference between the two minimum size thresholds is quite dramatic: at 100m<sup>2</sup>, the city is filled with a dense spread of small stepping-stone like habitats that were not visible at 500m<sup>2</sup> and, with a larger spread of these red corridors, are doing much more work for the overall connectivity of the habitat network. 
+              <p>Now, for the real results! In figures 2a and 2b, the red corridors in these city-wide maps, representing strings of highly central habitat patches, tend to follow clear urban barriers – I-5,I-90, the ship canal, etc. – highlighting patches that serve as critical bridges across these gaps. The difference between the two minimum size thresholds is quite dramatic: at 100m<sup>2</sup>, the city is filled with a dense spread of small stepping-stone like habitats that were not visible at 500m<sup>2</sup> and, with a larger spread of these red corridors, are doing much more work for the overall connectivity of the habitat network. 
                 </p>
                 <div class="pj-fig-grid">
                   <figure class="pj-fig-placeholder">
                     <img src="assets/Bees/connectivity_map_basemap_500_full.png" alt="City-wide connectivity map, 500m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                    <figcaption>City-wide habitat connectivity network, 500m² minimum patch size. Red corridors indicate high-betweenness-centrality patches.</figcaption>
+                    <figcaption>(Fig. 2a) City-wide habitat connectivity network, 500m² minimum patch size. Red dots indicate high-betweenness-centrality patches.</figcaption>
                   </figure>
                   <figure class="pj-fig-placeholder">
                     <img src="assets/Bees/connectivity_map_basemap_100_full.png" alt="City-wide connectivity map, 100m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                    <figcaption>City-wide habitat connectivity network, 100m² minimum patch size. Denser stepping-stone coverage reveals more corridor structure.</figcaption>
+                    <figcaption>(Fig. 2b) City-wide habitat connectivity network, 100m² minimum patch size. Denser habitat coverage reveals more red corridor structure.</figcaption>
                   </figure>
                 </div>
                  <p>
-                  Zooming in, we can now see the smaller-scale structure of our network in Northgate. Edges radiate visibly, especially from larger patch areas, which appear as single high-degree bodies with many edges because of the park's much longer perimeter bordering many smaller patches.  Occasionally, you may notice a point that appears to sit slightly inside a road or interstade corridor; this is an artifact of averaging cell positions across an irregularly shaped patch, not an actual indication that a habitat exists in the roadway. 
+                  Zooming in for figures 3a and 3b, we can now see the smaller-scale structure of our network in Northgate. Edges radiate visibly, especially from larger patch areas like parks which appear as single high-degree bodies with many edges because of the park's much longer perimeter bordering many smaller patches.  Occasionally, you may notice a point that appears to sit slightly inside a road or interstade corridor; this is an artifact of averaging cell positions across an irregularly shaped patch, not an actual indication that a habitat exists in the roadway. 
                  </p>
                  <div class="pj-fig-grid">
                    <figure class="pj-fig-placeholder">
                      <img src="assets/Bees/northgate_detail_500_full.png" alt="Northgate detail, 500m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                     <figcaption>Northgate neighborhood detail, 500m² threshold. Edges radiate from large park patches with long perimeters.</figcaption>
+                     <figcaption>(Fig. 3a) Northgate neighborhood detail, 500m² threshold. </figcaption>
                    </figure>
                    <figure class="pj-fig-placeholder">
                      <img src="assets/Bees/northgate_detail_100_full.png" alt="Northgate detail, 100m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                     <figcaption>Northgate neighborhood detail, 100m² threshold. Finer network structure with many more stepping-stone connections.</figcaption>
+                     <figcaption>(Fig. 3b) Northgate neighborhood detail, 100m² threshold.</figcaption>
                    </figure>
                  </div>
               <p>
-                These connected component maps show where the Seattle habitat network can fracture, and the two minimum thresholds show very different pictures. For 500m<sup>2</sup>, there are clearly defined isolated clusters – Phinney Ridge, Wallingford, and Fremont each form distinct components separated by interest and the ship canal. Dropping to 100m<sup>2</sup> fills in almost all of these gaps, forming a much more connected network. 
+                These connected component maps, seen in Fig.4a and Fig.4b, show where the Seattle habitat network can fracture, and the two minimum thresholds show very different pictures. For 500m<sup>2</sup>, there are clearly defined isolated clusters -– Phinney Ridge, Wallingford, and Fremont each form distinct components separated by interest and the ship canal. Dropping to 100m<sup>2</sup> fills in almost all of these gaps, forming a much more connected network. 
               </p>
                <div class="pj-fig-grid">
                  <figure class="pj-fig-placeholder">
                    <img src="assets/Bees/north_seattle_components.png" alt="North Seattle connected components, 500m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                   <figcaption>North Seattle connected components, 500m² threshold. Isolated clusters visible in Phinney Ridge, Wallingford, and Fremont.</figcaption>
+                   <figcaption>(Fig. 4a) North Seattle connected components, 500m² threshold. </figcaption>
                  </figure>
                  <figure class="pj-fig-placeholder">
                    <img src="assets/Bees/north_seattle_components_100.png" alt="North Seattle connected components, 100m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                   <figcaption>North Seattle connected components, 100m² threshold. Gaps largely filled in, forming a much more unified network.</figcaption>
+                   <figcaption>(Fig. 4b) North Seattle connected components, 100m² threshold.</figcaption>
                  </figure>
                </div>
               <p>
-                Looking at one last map – Downtown at the 100m<sup>2</sup> looks completely different from Northern Seattle, with the commercial core west of I-5 almost empty. There is a transition zone in Capitol Hill, well connected on its eastern side but fragmenting rapidly as you approach downtown. This could be a very impactful place to invest in a handful of new green spaces that could bring these isolated clusters back into the main network. 
+                Looking at one last map in Fig. 5, Downtown at the 100m<sup>2</sup> looks completely different from Northern Seattle with the commercial core west of I-5 almost empty. There is a transition zone in Capitol Hill, well connected on its eastern side but fragmenting rapidly as you approach downtown. This could be a very impactful place to invest in a handful of new green spaces that could bring these isolated clusters back into the main network. 
               </p>
               <figure class="pj-fig-placeholder" style="max-width:calc(50% + 4.75rem);margin:1.4rem auto;">
                 <img src="assets/Bees/downtown_components_100.png" alt="Downtown Seattle connected components, 100m² threshold" style="width:100%;border-radius:10px;display:block;" />
-                <figcaption>Downtown Seattle connected components, 100m² threshold. The commercial core west of I-5 is nearly empty; Capitol Hill shows rapid fragmentation moving westward.</figcaption>
+                <figcaption>(Fig. 5) Downtown Seattle connected components, 100m² threshold. The commercial core west of I-5 is nearly empty; Capitol Hill shows rapid fragmentation moving westward.</figcaption>
               </figure>
               <p>
                 Comparing the two thresholds, there is a clear pattern where the 100m<sup>2</sup> model produces far more high centrality patches with the largest centrality values jumping from 0.000025 to 0.002 despite the larger graph size increasing the normalization denominator. This really emphasizes the outsized role that smaller patches play, not only by simply increasing the number of does in the network but by creating new connections that funnel traffic through specific corridors – every shortest path between the newly connected clusters has to run through the small patch that bridged them, concentrating the betweenness centrality. And, it is hard for me to say which threshold is more accurate. The 500m<sup>2</sup> threshold is a bit more ecologically conservative, as a 500m<sup>2</sup> patch can realistically support both foraging and nesting and thus represents an entirely valid habit. The 100m<sup>2</sup> threshold on the other hand is more generous, including patches that might support a foraging stop but likely not a nesting site. The comparison is very telling, even though these small patches might not qualify as a true habitat, they are both the most crucial and most vulnerable points in the network as a whole. 
