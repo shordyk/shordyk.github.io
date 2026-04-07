@@ -26,7 +26,7 @@
         <header class="pj-header">
           <h1>Urban Bee Habitat Connectivity</h1>
           <p class="pj-lede">
-           In this project, I use ArcGIS and Python to create a habitat connectivity network for urban bees foraging across Seattle. 
+           For this indepndent spatial analysis project, I use ArcGIS and Python to create a habitat connectivity network for urban bees foraging across Seattle. Note: red-green color blind friendly version coming shortly!
           </p>
         </header>
 
@@ -69,17 +69,21 @@
               </div>
             </section>
 
-            <section class="pj-section">
+            <section class=”pj-section”>
               <h2>ArcGIS & PYTHON PROCESSING</h2>
-              <P>
-                In ArcGIS, these datasets are then combined(after removing tree cover fragments smaller than 3.5m<sup>2</sup>) into a binary habitat raster where every cell is either classified as bee habitat (1) or non-habitat (Null). This binary raster was then processed with the Region Group tool to assign a unique ID to each contiguous clump of habitat cells, producing over 320,000 distinct habitat patches! A cost surface raster is built from the binary habitat raster, assigning a cost of 1 to each habitat cell, a cost of 3 to other urban features such as streets and open land, and a cost of 100 to building footprints to create flight barriers. I then ran Cost Distance and Cost Allocation, with a maximum accumulated cost-distance of 2,400 cost distance. (800m set the maximum foraging distance, times 3 for the highest possible cost. This is a rather generous foraging distance, as it is possible for social bees like bumble bees to forage from 500m up to 1500m, but solitary, ground nesting bees are much more common to urban areas and only forage from around 100 to 300m. See Greenleaf et al. 2007 for more bee info!) For any given cell, the cost distance value is the accumulated cost to reach the nearest habitat patch, and the cost allocation value is the ID of that same nearest patch. These four rasters – habitat regions, cost surface, cost allocation, and cost distance – are then exported as GeoTIFFs and brought into Python for further analysis. 
-              </P>
-              <P>
-                My primary analysis tool was NetworkX, a Python package which implements crucial graph algorithms, like Brandes’ algorithm for the betweenness centrality metric and breadth-first search for connected components, in just a few lines. The first step was to filter out patches below a minimum threshold (100 or 500m<sup>2</sup>) to reduce computational load. Then, each surviving patch is reduced to a single centroid point by averaging the row and column positions of all its cells and converting to UTM coordinates with the raster’s affine transform. So each patch is now a single point in a GeoDataFrame with attributes for the patch ID and area. The cost allocation raster is then scanned to find where different patch regions border reach each other, and along the borders the cost distance values from both sides are summed to estimate the total travel cost through the boundary point. Then the minimum cost across all boundary contact points for each pair of habitat patches is kept as the connection weight. Now we can build a NetworkX graph where each node is a centroid and edges are weighted by the minimum crossing cost. Betweenness centrality (a measure of how often a patch lies along the cheapest path between patch pairs, or how “central” it is) and connected components (subnetworks of mutually reachable patches, that are disconnected from other groups) are then computed and merged back onto the GeoDataFrame for visualization. 
-              </P>
-              
-
             </section>
+
+            <details class=”pj-toggle”>
+              <summary>Toggle to read the details of my method.</summary>
+              <p>
+                In ArcGIS, these datasets are then combined(after removing tree cover fragments smaller than 3.5m<sup>2</sup>) into a binary habitat raster where every cell is either classified as bee habitat (1) or non-habitat (Null). This binary raster was then processed with the Region Group tool to assign a unique ID to each contiguous clump of habitat cells, producing over 320,000 distinct habitat patches! A cost surface raster is built from the binary habitat raster, assigning a cost of 1 to each habitat cell, a cost of 3 to other urban features such as streets and open land, and a cost of 100 to building footprints to create flight barriers. I then ran Cost Distance and Cost Allocation, with a maximum accumulated cost-distance of 2,400 cost distance. (800m set the maximum foraging distance, times 3 for the highest possible cost. This is a rather generous foraging distance, as it is possible for social bees like bumble bees to forage from 500m up to 1500m, but solitary, ground nesting bees are much more common to urban areas and only forage from around 100 to 300m. See Greenleaf et al. 2007 for more bee info!) For any given cell, the cost distance value is the accumulated cost to reach the nearest habitat patch, and the cost allocation value is the ID of that same nearest patch. These four rasters – habitat regions, cost surface, cost allocation, and cost distance – are then exported as GeoTIFFs and brought into Python for further analysis.
+              </p>
+              <p>
+                My primary analysis tool was NetworkX, a Python package which implements crucial graph algorithms, like Brandes’ algorithm for the betweenness centrality metric and breadth-first search for connected components, in just a few lines. The first step was to filter out patches below a minimum threshold (100 or 500m<sup>2</sup>) to reduce computational load. Then, each surviving patch is reduced to a single centroid point by averaging the row and column positions of all its cells and converting to UTM coordinates with the raster’s affine transform. So each patch is now a single point in a GeoDataFrame with attributes for the patch ID and area. The cost allocation raster is then scanned to find where different patch regions border reach each other, and along the borders the cost distance values from both sides are summed to estimate the total travel cost through the boundary point. Then the minimum cost across all boundary contact points for each pair of habitat patches is kept as the connection weight. Now we can build a NetworkX graph where each node is a centroid and edges are weighted by the minimum crossing cost. Betweenness centrality (a measure of how often a patch lies along the cheapest path between patch pairs, or how “central” it is) and connected components (subnetworks of mutually reachable patches, that are disconnected from other groups) are then computed and merged back onto the GeoDataFrame for visualization.
+              </p>
+            </details>
+
+            <div style="height:2rem;"></div>
 
             <section class="pj-section">
               <h2>RESULTS & DISCUSSION</h2>
@@ -127,7 +131,7 @@
               <p>
                 Looking at one last map – Downtown at the 100m<sup>2</sup> looks completely different from Northern Seattle, with the commercial core west of I-5 almost empty. There is a transition zone in Capitol Hill, well connected on its eastern side but fragmenting rapidly as you approach downtown. This could be a very impactful place to invest in a handful of new green spaces that could bring these isolated clusters back into the main network. 
               </p>
-              <figure class="pj-fig-placeholder" style="max-width:50%;margin:1.4rem auto;">
+              <figure class="pj-fig-placeholder" style="max-width:calc(50% + 4.75rem);margin:1.4rem auto;">
                 <img src="assets/Bees/downtown_components_100.png" alt="Downtown Seattle connected components, 100m² threshold" style="width:100%;border-radius:10px;display:block;" />
                 <figcaption>Downtown Seattle connected components, 100m² threshold. The commercial core west of I-5 is nearly empty; Capitol Hill shows rapid fragmentation moving westward.</figcaption>
               </figure>
