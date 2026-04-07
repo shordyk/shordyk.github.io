@@ -1154,6 +1154,12 @@ img {
   margin-bottom: 1.4rem;
 }
 
+/* Lede block sits to the left of the floated sidebar */
+.pj-lede-block {
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
 /* Main body */
 .pj-body {
   min-width: 0;

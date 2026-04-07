@@ -24,7 +24,7 @@
         <a href="projects.html" class="project-breadcrumb">&#8592; Projects</a>
 
         <header class="pj-header">
-          <h1>Global Energy</h1>
+          <h1>Global Energy Visualization</h1>
         </header>
 
         <div class="pj-layout">
@@ -34,29 +34,45 @@
               <p class="scope-label">SCOPE</p>
               <dl class="scope-list">
                 <dt>Purpose</dt>
-                <dd></dd>
+                <dd>Personal visualization exercise to learn more about global energy trends</dd>
                 <dt>Length</dt>
-                <dd></dd>
+                <dd>Afternoon project</dd>
                 <dt>Status</dt>
-                <dd></dd>
+                <dd>Complete</dd>
                 <dt>Tools</dt>
-                <dd></dd>
+                <dd>Python, MatPlotLib, Seaborn</dd>
               </dl>
             </div>
           </aside>
 
-          <div class="pj-body">
+          <div class="pj-lede-block">
+            <p class="pj-lede">
+              A quick exploration of global energy data, with a focus on visualizing the scale of the energy transition and the displacement hypothesis. As more renewable energy sources are integretad into the grid, are we replacing existing fossil fuel generation or simply meeting a growing demand?
+            </p>
+            <p class="pj-lede" style="margin-top: 1.2rem;">
+              These plots were made using Python visualization libraries, including MatPlotLib and Seaborn, with data sourced from the International Energy Agency and Our World in Data. The goal was to create clear, informative visualizations that highlight key global energy trends.
+            </p>
+          </div>
+
+          <div class="pj-body" style="clear: right;">
+
+          
 
             <section class="pj-section">
+              <p></p>
               <div class="pj-fig-grid">
-                <figure class="pj-fig-placeholder" style="grid-column: 1 / -1; margin-left: -4rem; margin-right: -4rem;">
+                <figure class="pj-fig-placeholder" style="grid-column: 1 / -1;">
                   <img src="assets/Energy/displacement_diverging.png" alt="Energy displacement diverging chart" style="width:100%;border-radius:10px;display:block;" />
-                </figure>
-                <figure class="pj-fig-placeholder" style="grid-column: 1 / -1; margin-left: -4rem; margin-right: -4rem;">
-                  <img src="assets/Energy/marimekko.png" alt="Energy marimekko chart" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Fig. 1 tests the displacment hypothesis. As renewable energy scales, does fossil fuel energy production reduce proportionally? This question is complicated by implications of COVID-19 on global energy use. </figcaption>
                 </figure>
                 <figure class="pj-fig-placeholder" style="grid-column: 1 / -1;">
+                  <img src="assets/Energy/marimekko.png" alt="Energy marimekko chart" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Fig. 2 Shows a marimekko-style chart visualizing the distribution of different energy sources across various countries in 2023. Focus is on visual area, or the actual amount of energy produced and thus the impact of the country's energy mix on the world. Can see that the countries with the "best" mix of renewable vs fossil fuels have a smaller potential for global change. 
+                    </figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder" style="grid-column: 1 / -1; max-width: 55%; margin: 0 auto;">
                   <img src="assets/Energy/donut_global_mix.png" alt="Global energy mix donut chart" style="width:100%;border-radius:10px;display:block;" />
+                  <figcaption>Fig. 3 Displays a donut chart representing the global energy mix in 2023, highlighting the proportion of different energy sources contributing to the overall energy production.</figcaption>
                 </figure>
               </div>
             </section>
