@@ -26,9 +26,9 @@
 
         <!-- ── Page header ───────────────────────────── -->
         <header class="pj-header">
-          <h1>Machine Learning &amp; Compound Hazards: Random Forest Prediction of Landslides in California</h1>
+          <h1>Machine Learning &amp; Compound Hazards</h1>
           <p class="pj-lede">
-            PAGE IN PROGRESS.
+            A Random Forest model of landslide events in California, with rainfall and wildfire history as features.
           </p>
         </header>
 
@@ -56,68 +56,22 @@
           <div class="pj-body">
 
             <section class="pj-section">
-              <h2></h2>
-             <!--  <p>
-                Landslides in California are rarely driven by a single factor. Steep terrain,
-                unstable lithology, and intense precipitation all contribute — but wildfire adds a
-                compounding layer of risk that traditional susceptibility models often underweight.
-                Post-fire soils lose their cohesion and water-repellent layers form, dramatically
-                increasing runoff and shallow landslide initiation potential during subsequent
-                rain events.
-              </p>
+              <h2>Background & Model Design </h2>
               <p>
-                This project investigated whether a machine learning approach incorporating fire
-                history as a compound driver could meaningfully improve landslide susceptibility
-                predictions over models trained on static terrain variables alone.
-              </p> -->
-            </section>
-
-            <section class="pj-section">
-              <h2></h2>
-      <!--         <p>
-                A random forest classifier was trained on a multi-variable dataset combining
-                slope gradient, aspect, lithology, precipitation intensity, vegetation cover,
-                and wildfire burn severity (derived from BAER/MTBS data). Training labels were
-                drawn from historical landslide inventories georeferenced across the state.
+                Debris flows are governed by complex physical dynamics that are difficult to model numerically, but the triggering conditions tend to be driven by a much smaller set of observable variables like rainfall intensity and land surface changes, making them well-suited to data-driven classification. This project explored whether machine learning can improve landslide prediction in California by treating it as a compound hazard problem, combining both precipitation amount and wildfire burn history as input features, to see if wildfire history might be able to represent key surface and stability condition changes as a predictive feature. Our approach was inspired by <a class="cite" href="https://arxiv.org/abs/2208.13027" target="_blank" rel="noopener">Tsai et al. (2022)</a>, who demonstrated that a Random Forest classifier trained on hourly rainfall data alone could outperform Taiwan's existing debris flow warning system, which relies on a single time-weighted rainfall threshold. 
               </p>
-              <p>
-                Feature importance scores were extracted to assess the relative contribution of
-                each driver. Model performance was evaluated using out-of-bag error, precision-recall
-                curves, and spatial cross-validation to guard against geographic overfitting.
-              </p> -->
-            </section>
-
-            <section class="pj-section">
-              <h2></h2>
-<!--               <p>
-                The model achieved strong predictive performance, with wildfire burn severity
-                ranking as one of the top three features by importance — confirming that post-fire
-                conditions are a critical and underrepresented predictor of landslide susceptibility.
-                High-risk zones were concentrated in the Coast Ranges and Southern California
-                mountains, particularly in areas that had burned within the preceding three years.
-              </p> -->
-
-              <figure class="pj-fig-placeholder">
+                <figure class="pj-fig-placeholder">
                 <img src="assets/Wildfire/Wildfire-Poster.png" alt="Poster summarizing model methods and results" style="width:100%;border-radius:10px;display:block;" />
-                <figcaption>Project poster, presented at Stanford Wildfire Hacakthon expo. </figcaption>
+                <figcaption>Project poster, presented at Stanford Wildfire Hacakthon expo 2023. </figcaption>
               </figure>
-            </section>
-
-            <section class="pj-section">
-              <h2></h2>
-<!--               <p>
-                These findings support integrating dynamic fire-regime data into operational
-                landslide early-warning systems. The compound nature of the hazard — fire followed
-                by rain — means that susceptibility maps need to be updated seasonally rather than
-                treated as static products. The random forest framework is well-suited to this
-                because it can be retrained as new burn perimeters become available.
+              </section>
+              <section></section>
+                <h2>Implementation & Conclusions</h2>
+                <p>
+                 <p>
+                The machine learning pipeline was built in Python using scikit-learn, and geospatial data analysis performed with QGIS. We assembled a positive dataset from the NASA Global Landslide Catalog (post-2007 events), matched each entry to the nearest weather station via the California Irrigation Management Information System for same-day and prior-day precipitation, and overlaid wildfire history from California Open Data's fire perimeter polygons. A synthetic negative dataset was generated with varied precipitation and burn history to train the Random Forest classifier. Feature importance analysis demonstrated that same-day precipitation dominated at 61%, followed by prior-day rainfall at 26%, while wildfire history contributed only about 12%— suggesting that, at least at daily temporal resolution, rainfall is the most prominent signal despite the complex relationship between soil stability and wildfire history. A key limitation to our work was the absence of hourly rainfall data, which <a class="cite" href="https://arxiv.org/abs/2208.13027" target="_blank" rel="noopener">Tsai et al. (2022)</a> identified as critical, which was left out as very few weather stations had consistent hourly datasets. Despite this, our model correctly flagged 64 of 74 landslide events during the January–March 2023 rainy season without evidence of overfitting. The project was completed as part of a team, where I was the project lead and managed the machine learning approach, and two other students carried out the data cleaning and map production. See our poster for more info!
               </p>
-              <p>
-                Limitations include spatial gaps in the historical landslide inventory and the
-                absence of soil moisture data as a predictor. Future work could incorporate
-                real-time satellite soil moisture products to improve temporal resolution.
-              </p> -->
-            </section>
+
 
           </div><!-- /pj-body -->
 
