@@ -61,22 +61,41 @@
              
 
               
-           <!-- add pingo, rings, and slumps figures here with subtitles. all in a row, extending slightly beyond margins of text-->
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin:1.2rem 0;">
+                <figure class="pj-fig-placeholder" style="margin:0;">
+                  <img src="assets/Permafrost/pingo.jpg" alt="Pingo landform" style="width:100%;height:160px;object-fit:cover;border-radius:10px;display:block;" />
+                  <figcaption>Pingo — a mound formed by a subsurface ice lens.</figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder" style="margin:0;">
+                  <img src="assets/Permafrost/rings.jpg" alt="Stone rings landform" style="width:100%;height:160px;object-fit:cover;border-radius:10px;display:block;" />
+                  <figcaption>Stone rings — rock sorting driven by freeze-thaw cycles.</figcaption>
+                </figure>
+                <figure class="pj-fig-placeholder" style="margin:0;">
+                  <img src="assets/Permafrost/slumps.jpg" alt="Permafrost slump" style="width:100%;height:160px;object-fit:cover;border-radius:10px;display:block;" />
+                  <figcaption>Permafrost slump — mass wasting triggered by ice-rich thaw.</figcaption>
+                </figure>
+              </div>
+            </section>
 
             <section class="pj-section">
               <h2>Model details & implementation.</h2>
               <p>In this project, I aim to investigate the role of an ice lens on permafrost slumps. More specifically, I focus on how the spike in pore water pressure, due to a large body of ice melting, compares to the overburden pressure - with the assumption that when these two are equal, the soil is fluidized and is prone to slump given any applied stress. My hypothesis is that the larger the ice lens is in comparison to the soil col- umn, the deeper the system will become fluidized, and thus the more significant of a slump given that more soil mass would be destabilized.
-              
+               <figure class="pj-fig-placeholder" style="float:right;width:30%;margin:0 0 1rem 2rem;">
+                <img src="assets/Permafrost/IMG_627A8ADB545C-1.jpeg" alt="Permafrost model diagram" style="width:100%;border-radius:10px;display:block;" />
+              </figure>
               </p>
               Drawing on Darcy flow and Biott’s theory of poroelasticity,  I built both a 1D and 2D finite-difference model to simulate the pore water pressure spike caused by a melting ice lens and track where in the soil column effective stress drops to zero, and thus where a slump would occur. This project was an effort to “encode” physical mechanics to answer a specific research question, giving me an opportunity to design a modeling approach from scratch.
               <p>
-              <!-- add img 627 here, right aligned, wrap this text around it  -->
+             
               </p>
             </section>
 
             <section class="pj-section">
               <h2></h2>
-              <div class="pj-fig-grid">
+              <p>
+                The model was developed in Python and implemented with varying slope angles and ice-to-soil ratios. On flat terrain, even large ice volumes couldn't produce a slump, but on sloped geometries the results were much more notable – an ice lens occupying as little as a third of the column depth was enough to trigger fluidization at 30°, and the depth of failure increased with ice volume, confirming the initial hypothesis. Check out my course report for more details on permafrost mechanics! 
+              </p>
+              <div class="pj-fig-grid" style="margin-left:-6rem;margin-right:-6rem;">
                 <figure class="pj-fig-placeholder">
                   <img src="assets/Permafrost/stress_distribution_fourtosix50deg.png" alt="Stress distribution — 4:6 geometry, 50° headwall" style="width:100%;border-radius:10px;display:block;" />
                   <figcaption>Stress distribution for a 4:6 slump ratio at 50° headwall angle.</figcaption>
@@ -87,9 +106,7 @@
                 </figure>
               </div>
 
-              <p>
-                The model was developed in Python and implemented with varying slope angles and ice-to-soil ratios. On flat terrain, even large ice volumes couldn't produce a slump, but on sloped geometries the results were much more notable – an ice lens occupying as little as a third of the column depth was enough to trigger fluidization at 30°, and the depth of failure increased with ice volume, confirming the initial hypothesis. Check out my course report for more details on permafrost mechanics! 
-              </p>
+              
 
               
             </section>
@@ -101,6 +118,7 @@
         </div><!-- /pj-layout -->
 
         <div class="project-actions">
+          <a href="assets/Permafrost/Modeling_Earth_Final.pdf" class="button button-primary" target="_blank" rel="noopener">View Full Report</a>
           <a href="projects.html" class="button button-outline">&#8592; Back to projects</a>
         </div>
       </div><!-- /pj-inner -->
