@@ -15,9 +15,9 @@ const skills = [
   "Batch Scripting",
   "QGIS",
   "Scientific Writing",
-  "SQL",
+  //"SQL",
   "Data Storytelling",
-  "ArcPy / GeoPandas",
+  "Rasterio / GeoPandas",
   "NaturaL Capital InVEST"
 ];
 
