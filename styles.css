@@ -1110,7 +1110,6 @@ img {
 .pj-inner {
   width: min(860px, calc(100% - 10rem));
   margin: 0 auto;
-  padding-left: 1.5rem;
 }
 
 /* Page header: title + lede above the two-column body */
@@ -1133,7 +1132,7 @@ img {
   color: var(--muted);
   font-size: 1.04rem;
   line-height: 1.68;
-  max-width: 640px;
+  max-width: none;
 }
 
 /* Layout: scope box floats top-right, body text wraps beneath it */
@@ -1174,6 +1173,14 @@ img {
   margin-bottom: 0;
 }
 
+.pj-subhead {
+  margin: 1.6rem 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
 .pj-section h2,
 .pj-body h2 {
   margin: 0 0 0.7rem;
@@ -1200,9 +1207,14 @@ img {
 }
 
 /* Toggle / disclosure for processing section */
+.pj-section + .pj-toggle {
+  margin-top: -1.6rem;
+}
+
 .pj-toggle {
   border: none;
   margin-bottom: 1rem;
+  font-family: inherit;
 }
 
 .pj-toggle summary {
