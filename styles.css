@@ -667,6 +667,15 @@ img {
   font-size: 0.95rem;
 }
 
+.cv-org a {
+  color: #4169e1;
+  text-decoration: none;
+}
+
+.cv-org a:hover {
+  text-decoration: underline;
+}
+
 .cv-entry p:last-child {
   margin: 0;
 }
