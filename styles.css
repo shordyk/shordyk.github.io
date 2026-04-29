@@ -793,16 +793,8 @@ img {
   min-width: 240px;
   min-height: 64px;
   padding: 1rem 1.6rem;
-  border: 2px solid var(--border);
+  border: 2px solid transparent;
   border-radius: 999px;
-  background: #ffffff;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: box-shadow 200ms, border-color 200ms;
-}
-
-.social-btn-email {
-  border-color: transparent;
   background: linear-gradient(#ffffff, #ffffff) padding-box,
     linear-gradient(
       120deg,
@@ -817,7 +809,12 @@ img {
   background-size: 100% 100%, 280% 280%;
   background-position: 0 0, 0% 50%;
   animation: rainbow-shimmer 3.8s linear infinite;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 200ms;
 }
+
+.social-btn-email {}
 
 .contact-location {
   display: inline-flex;
@@ -843,22 +840,7 @@ img {
 }
 
 .social-btn:hover {
-  border-color: transparent;
-  background: linear-gradient(#ffffff, #ffffff) padding-box,
-    linear-gradient(
-        120deg,
-        #ff7a7a,
-        #ffb86b,
-        #ffe56b,
-        #7ee787,
-        #7dd3fc,
-        #c4b5fd,
-        #ff7a7a
-      )
-      border-box;
-  background-size: 100% 100%, 280% 280%;
-  background-position: 0 0, 0% 50%;
-  animation: rainbow-shimmer 3.8s linear infinite;
+  color: #1f1f1f;
 }
 
 .social-btn:hover svg {
