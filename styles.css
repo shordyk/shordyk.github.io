@@ -475,14 +475,14 @@ img {
   color: #ffffff;
   padding: 0.55rem 1rem;
   border-radius: 12px;
-  background: #c4c4c4;
+  background: #a8a8a8;
   border: 2px solid transparent;
   width: 100%;
   transition: background 200ms;
 }
 
 .project-thumb:hover .project-thumb-title {
-  background: #b0b0b0;
+  background: #949494;
 }
 
 /* Add spacing between the intro and the gallery */
