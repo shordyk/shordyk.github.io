@@ -181,13 +181,13 @@ img {
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.65rem;
-  transform: translateX(-54px);
+  transform: translateX(-34px);
 }
 
 .profile-wrap {
   position: relative;
-  width: 164px;
-  height: 164px;
+  width: 196px;
+  height: 196px;
   margin: 0;
   filter: none;
   transform: translateX(0);
@@ -211,13 +211,14 @@ img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.38rem 0.78rem;
+  padding: 0.38rem 0.52rem;
   border-radius: 999px;
   font-size: 0.8rem;
   font-weight: 500;
+  line-height: 1.2;
   margin: 0;
   position: absolute;
-  left: calc(50% + 96px);
+  left: calc(50% + 106px);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -358,8 +359,8 @@ img {
 }
 
 .about p {
-  font-size: 1.16rem;
-  line-height: 1.78;
+  font-size: 1.06rem;
+  line-height: 1.65;
 }
 
 .about {
