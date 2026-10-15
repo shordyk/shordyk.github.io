@@ -7,9 +7,9 @@ if (yearEl) {
 
 
 const skills = [
-  "ArcGIS",
+  "ArcGIS Pro",
   "Community Engagement",
-  "Python / MatLab / Fortran",
+  "Python",
   "Ecosystem Service Modeling",
   "HPC",
   "Batch Scripting",
@@ -17,7 +17,9 @@ const skills = [
   "Scientific Writing",
   //"SQL",
   "Data Storytelling",
-  "Rasterio / GeoPandas",
+  "ArcGIS Online",
+  "Quarto",
+  "GeoPandas",
   "NaturaL Capital InVEST"
 ];
 
