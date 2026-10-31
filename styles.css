@@ -978,6 +978,8 @@ p.cv-org {
 @media (max-width: 640px) {
   html {
     font-size: 100%; /* 16px rem base on phones (17px on desktop) */
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 
   .header-left {
@@ -991,26 +993,27 @@ p.cv-org {
   }
 
   .earth-widget {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
     border-width: 2.5px;
     flex-shrink: 0;
   }
 
   .earth-icon {
-    width: 27px;
-    height: 27px;
+    width: 24px;
+    height: 24px;
   }
 
   .nav-links {
     flex-wrap: nowrap;
-    gap: 0.1rem;
-    padding: 0.25rem 0.3rem;
+    gap: 0;
+    padding: 0.2rem 0.25rem;
+    min-width: 0;
   }
 
   .nav-links a {
-    font-size: 0.88rem;
-    padding: 0.32rem 0.6rem;
+    font-size: clamp(0.76rem, 3.6vw, 0.86rem);
+    padding: 0.3rem 0.5rem;
     white-space: nowrap;
   }
 
@@ -1063,8 +1066,7 @@ p.cv-org {
 
 @media (max-width: 380px) {
   .nav-links a {
-    font-size: 0.82rem;
-    padding: 0.3rem 0.45rem;
+    padding: 0.28rem 0.4rem;
   }
 }
 
