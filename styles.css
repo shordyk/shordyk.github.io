@@ -250,7 +250,7 @@ img {
 
 .status-pill-rainbow {
   border: 2.5px solid transparent;
-  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+  background: linear-gradient(#f4fcf3, #f4fcf3) padding-box,
     linear-gradient(
         120deg,
         #ff7a7a,
@@ -337,8 +337,8 @@ img {
   color: var(--text);
   border: 2px solid transparent;
   background: linear-gradient(
-      var(--surface),
-      var(--surface)
+      #f4fcf3,
+      #f4fcf3
     )
     padding-box,
     linear-gradient(
@@ -812,7 +812,7 @@ p.cv-org {
   padding: 1rem 1.6rem;
   border: 2px solid transparent;
   border-radius: 999px;
-  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+  background: linear-gradient(#f4fcf3, #f4fcf3) padding-box,
     linear-gradient(
       120deg,
       #ff7a7a,
@@ -884,7 +884,7 @@ p.cv-org {
   padding: 0.45rem 1rem;
   border-radius: 999px;
   border: 2px solid transparent;
-  background: linear-gradient(var(--surface), var(--surface)) padding-box,
+  background: linear-gradient(#f4fcf3, #f4fcf3) padding-box,
     linear-gradient(
       120deg,
       #ff7a7a,
@@ -1057,6 +1057,14 @@ p.cv-org {
 
   .education-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* Work page: dates sit above the title instead of on the same line */
+  .cv-entry-head,
+  .education-head {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 0.1rem;
   }
 
   .tech-track {
