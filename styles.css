@@ -976,8 +976,42 @@ p.cv-org {
 }
 
 @media (max-width: 640px) {
+  html {
+    font-size: 100%; /* 16px rem base on phones (17px on desktop) */
+  }
+
   .header-left {
     margin-left: 0;
+  }
+
+  /* keep the header on one line */
+  .nav {
+    gap: 0.5rem;
+    min-height: 62px;
+  }
+
+  .earth-widget {
+    width: 38px;
+    height: 38px;
+    border-width: 2.5px;
+    flex-shrink: 0;
+  }
+
+  .earth-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    gap: 0.1rem;
+    padding: 0.25rem 0.3rem;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+    padding: 0.32rem 0.6rem;
+    white-space: nowrap;
   }
 
   .container {
@@ -1024,6 +1058,13 @@ p.cv-org {
 
   .tech-track {
     animation-duration: 24s;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links a {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.45rem;
   }
 }
 
