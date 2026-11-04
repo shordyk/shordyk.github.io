@@ -1,8 +1,8 @@
 :root {
-  --bg: #def5dd;
+  --bg: #dbefda;
   --green: #23691f;
   --surface: #f4fcf3;
-  --text: #171717;
+  --text: #0d0d0d;
   --muted: #5f5f5f;
   --accent: #1c1c1c;
   --accent-soft: #f6f6f6;
@@ -65,7 +65,7 @@ img {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(5px);
-  background: rgba(222, 245, 221, 0.95);
+  background: rgba(219, 239, 218, 0.95);
   border-bottom: none;
 }
 
@@ -382,11 +382,11 @@ img {
 .cv-entry p,
 .education-card p,
 .cv-awards-list {
-  color: #222222;
+  color: var(--text);
 }
 
 .about p {
-  color: #333333;
+  color: var(--text);
   font-size: 1.06rem;
   line-height: 1.65;
 }
