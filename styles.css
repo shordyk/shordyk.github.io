@@ -473,7 +473,7 @@ img {
 
 .project-thumb-media--contain img {
   object-fit: contain;
-  padding: 0.5rem;
+  padding: 0.6rem;
 }
 
 .project-thumb-placeholder {
