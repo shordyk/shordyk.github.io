@@ -466,6 +466,16 @@ img {
   display: block;
 }
 
+/* Wide charts: show the whole image instead of cropping to the square */
+.project-thumb-media--contain {
+  background: #ffffff;
+}
+
+.project-thumb-media--contain img {
+  object-fit: contain;
+  padding: 0.5rem;
+}
+
 .project-thumb-placeholder {
   background: linear-gradient(135deg, #e8f0e8 0%, #d4e8d4 50%, #c8dfc8 100%);
 }
